@@ -1,4 +1,16 @@
-<div class="conteiner">
+<% if logged_in? %>
+  <div class="conteiner">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <div class="col-md-12 text-center" >
+        <img src="/images/icon_2.png">
+        <p><%= current_user.name %></p></div>
+        <%= render "users/status" %>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="conteiner">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <div class="info col-md-12 text-center" >
@@ -16,6 +28,9 @@
         <li><h3>クチコミをお気に入りに登録することができるよ！</h3></li>
       </ul>
     </div>
+    <div class="text-center">
+      <%= link_to "さっそく会員登録してみよう", signup_path, class: "btn btn-warning" %>
+    </div>
   </div>
 
   <div class="row">
@@ -31,3 +46,4 @@
     </div>
   </div>
 </div>
+<% end %>

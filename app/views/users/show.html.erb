@@ -1,0 +1,19 @@
+<div class="row">
+  <aside class="col-xs-4">
+    <div class="panel panel-default">
+      <div class="panel-heading text-center">
+        <h3 class="panel-title"><%= @user.name %></h3>
+      </div>
+      <div class="panel-body text-center">
+        <img class="user_profile_img" src="/images/icon_2.png">
+      </div>
+    </div>
+    <%= render "status" %>
+  </aside>
+  <div class="col-xs-8">
+    <ul class="nav nav-tabs nav-justified">
+      <li><a href="#">自分のクチコミ</a></li>
+      <li><a href="#">イモ惚れ！</a></li>
+    </ul>
+  </div>
+</div>

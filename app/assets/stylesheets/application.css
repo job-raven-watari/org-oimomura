@@ -1,38 +1,38 @@
 @charset "utf-8";
+/* html*/
+html {
+  min-height: 100%;
+  position: relative;
+}
 
 /* body*/
 li {
   list-style: none;
 }
+body {
+  padding-top: 180px;
+  margin-bottom: 200px;
+}
+
+/* footer */
+footer {
+  background-color: #493759;
+  bottom: 0;
+  position: absolute;
+  height: 80px;
+  width: 100%;
+  color: #fff;
+}
 
 .info {
   height: 100%;
   width: 100%;
-  margin-top: 100px;
 }
 .info .info_1 {
-  width: 30%;
+  width: 20%;
 }
 .info .info_2 {
-  width: 50%;
-}
-
-/* wrapper */
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.footer {
-  background-color: #da70d6;
-  margin-top: auto;
-  height: 70px;
-  padding: 20px;
-}
-
-footer p {
-  font-size: 5px;
+  width: 40%;
 }
 
 /* toppage */
@@ -42,17 +42,52 @@ footer p {
 
 .post-sample-title {
   height: 50px;
-  border-left: 12px double #ff2255;
-  border-right: 12px double #ff2255;
+  border-left: 12px double #e6b422;
+  border-right: 12px double #e6b422;
 }
 
-/* navbar */
+/* navbar ナビバー（トップ）*/
 .navbar {
-  background-color: #da70d6;
-  margin: 0;
+  background-color: #493759;
+  height: 120px;
 }
 .navbar-header img {
   margin: 5px 10px;
   height: 100px;
   border-radius: 50%;
+}
+.nav_btn {
+  background-color: #fff;
+  margin: 30px 5px;
+}
+
+/*
+navbar ナビバー（フッター）
+.navbar_foot {
+  background-color: #493759;
+  height: 50px;
+}
+*/
+
+/* user/new 会員登録画面*/
+.user_new img {
+  margin: 5px 10px;
+  height: 100px;
+  border-radius: 50%;
+}
+.guide {
+  margin: 30px 0;
+}
+
+/* session/new ログイン画面 */
+.user_login img {
+  margin: 5px 10px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* user/show　ユーザプロフィール画面 */
+.user_profile_img {
+  text-align: center;
+  width: 70%;
 }
