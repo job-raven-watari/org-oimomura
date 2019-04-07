@@ -1,0 +1,30 @@
+<div class="sample_reviews_box">
+  <div class="media-list">
+    <% @reviews_1.each do |review| %>
+      <div class="media">
+          <div>
+            <%= review.user.name %> <span class="text-muted">さんからのクチコミ</span>
+          </div>
+        <div class="media-left">
+          <img class="review_img" src="/images/icon_1.png">
+        </div>
+        <div class="media-body">
+          <p>
+            <span class="reviews_menu">種類</span> <%= review.kind %>
+            <span class="reviews_menu">産地</span> <%= review.producing_area %>
+            <span class="reviews_menu">点数</span> <%= review.point %>
+          </p>
+          <p>
+            <span class="reviews_menu">商品名</span> <%= review.product_name %>
+          </p>
+          <p>
+            <span class="reviews_menu">コメント</span>
+          </p>
+          <p>
+            <%= review.comment.truncate(40) %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

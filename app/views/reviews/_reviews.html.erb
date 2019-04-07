@@ -1,0 +1,42 @@
+<div class="reviews_box">
+  <div class="media-list">
+    <% reviews.each do |review| %>
+      <div class="media">
+          <div>
+            <%= link_to review.user.name, user_path(review.user) %> <span class="text-muted">さんのクチコミ</span>
+          </div>
+        <div class="media-left">
+          <img class="review_img" src="/images/icon_1.png">
+        </div>
+        <div class="media-body">
+          <div>
+            <span class="delete_review_button">
+          <% if current_user == review.user %>
+            <%= link_to "削除", review, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-xs" %>
+          <% end %>
+            </span>
+            <p>
+              <span class="reviews_menu">種類</span> <%= review.kind %>
+              <span class="reviews_menu">産地</span> <%= review.producing_area %>
+              <span class="reviews_menu">点数</span> <%= review.point %>
+            </p>
+            <p><span class="reviews_menu">商品名</span> <%= review.product_name %></p>
+            <p><span class="reviews_menu">コメント</span></p>
+            <p><%= review.comment.truncate(40) %></p>
+            <span class="read_more">
+              <%= link_to "詳細", review_path(review), class: "btn btn-dafault btn-xs" %>
+            </span>
+          </div>
+        </div>
+      </div>
+        <div class="text-right">
+            <h6 class="media-heading"><%= review.user.created_at %></h6>
+
+          <% unless current_user == review.user %>
+            <%= render "likes/likes_button", review: review %>
+          <% end %>
+        </div>
+      <% end %>
+    <%= paginate reviews %>
+  </div>
+</div>

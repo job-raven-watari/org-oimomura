@@ -5,6 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @reviews = @user.reviews.order("created_at DESC").page(params[:page]).per(5)
+    counts(@user)
   end
 
   def new
@@ -21,6 +23,12 @@ class UsersController < ApplicationController
       flash.now[:danger] = "会員登録に失敗しました"
       render :new
     end
+  end
+  
+  def likes
+    @user = User.find(params[:id])
+    @reviews = @user.likes_reviews.page(params[:page]).per(5)
+    counts(@user)
   end
   
   private
