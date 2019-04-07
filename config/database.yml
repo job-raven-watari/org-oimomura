@@ -48,7 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: oimomura_production
   username: oimomura
   password: <%= ENV['OIMOMURA_DATABASE_PASSWORD'] %>
