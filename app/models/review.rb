@@ -28,4 +28,9 @@ class Review < ApplicationRecord
     福岡県:40,佐賀県:41,長崎県:42,熊本県:43,大分県:44,宮崎県:45,鹿児島県:46,沖縄県:47,
     不明（国内）:48,不明（国外）:49
   }
+  
+  validates :point,
+            inclusion: { in: Review.points.keys }
+  validates :producing_area,
+            inclusion: { in: Review.producing_areas.keys }
 end

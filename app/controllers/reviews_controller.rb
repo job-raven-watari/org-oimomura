@@ -12,7 +12,7 @@ class ReviewsController < ApplicationController
       flash[:success] = "クチコミを投稿しました"
       redirect_to root_url
     else
-      @reviews = current_user.reviews.order("created_at DESC").page[params[:page]]
+      @reviews = Review.order("created_at DESC").page(params[:page])
       flash.now[:danger] = "クチコミの投稿ができませんでした"
       render "toppages/index"
     end
