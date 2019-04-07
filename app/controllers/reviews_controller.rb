@@ -19,9 +19,10 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
+    @review = Review.find(params[:id])
     @review.destroy
     flash[:success] = "クチコミを削除しました"
-    redirect_back(fallback_location: root_path)
+    redirect_to root_url
   end
   
   private

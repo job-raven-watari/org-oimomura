@@ -11,7 +11,7 @@
         <div>
           <span class="delete_review_button">
             <% if current_user == @review.user %>
-              <%= link_to "削除する", @review, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-xs" %>
+              <%= link_to "削除", @review, method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger btn-xs" %>
             <% end %>
           </span>
           <p>
